@@ -1,9 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
+import reducers from './reducers';
 
-test('renders learn react link', () => {
-  // const { getByText } = render(<App />);
-  // const linkElement = getByText(/learn react/i);
-  // expect(linkElement).toBeInTheDocument();
+test('reducers', () => {
+  let state;
+  state = reducers({counter:7}, {type:'DECREMENT'});
+  expect(state).toEqual({counter:6});
 });
